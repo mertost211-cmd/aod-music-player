@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">AOD Music</string>
+    <string name="setup_intro">Aşağıdaki üç izni sırayla ver, sonra servisi başlat.</string>
+    <string name="btn_notification_access">1. Bildirim erişimi izni ver</string>
+    <string name="btn_overlay_permission">2. Diğer uygulamaların üzerine çizme izni ver</string>
+    <string name="btn_battery_optimization">3. Pil optimizasyonundan muaf tut</string>
+    <string name="btn_start_service">4. AOD servisini başlat</string>
+    <string name="service_running">AOD servisi çalışıyor</string>
+    <string name="no_song_playing">Şarkı çalmıyor</string>
+    <string name="album_art_desc">Albüm kapağı</string>
+</resources>
