@@ -38,7 +38,11 @@ class AodOverlayService : Service() {
                 Intent.ACTION_SCREEN_OFF -> {
                     if (MusicRepository.current.isPlaying) showOverlay()
                 }
-                Intent.ACTION_SCREEN_ON, Intent.ACTION_USER_PRESENT -> {
+                Intent.ACTION_USER_PRESENT -> {
+                    // Sadece kilit gerçekten açıldığında (PIN/parmak izi vb.) kapat.
+                    // ACTION_SCREEN_ON'u burada dinlemiyoruz çünkü o, ekranı sadece
+                    // kontrol etmek için açtığında da tetikleniyor ve overlay'i
+                    // hemen siliyordu.
                     removeOverlay()
                 }
             }
