@@ -39,10 +39,8 @@ class AodOverlayService : Service() {
                     if (MusicRepository.current.isPlaying) showOverlay()
                 }
                 Intent.ACTION_USER_PRESENT -> {
-                    // Sadece kilit gerçekten açıldığında (PIN/parmak izi vb.) kapat.
-                    // ACTION_SCREEN_ON'u burada dinlemiyoruz çünkü o, ekranı sadece
-                    // kontrol etmek için açtığında da tetikleniyor ve overlay'i
-                    // hemen siliyordu.
+                    // Sadece kilit gerçekten açıldığında (PIN/parmak izi/kaydırma
+                    // ile geçildiğinde) kapat. ACTION_SCREEN_ON'u kasıtlı dinlemiyoruz.
                     removeOverlay()
                 }
             }
@@ -101,7 +99,6 @@ class AodOverlayService : Service() {
             WindowManager.LayoutParams.MATCH_PARENT,
             type,
             WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED or
-                WindowManager.LayoutParams.FLAG_DISMISS_KEYGUARD or
                 WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN or
                 WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON or
                 WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE,
